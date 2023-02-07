@@ -1,28 +1,34 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app" class="top_floor_wrap">
+    <ContentHeader />
+    <main>
+      <TMap />
+    </main>
+    <ContentFooter />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import TMap from "@/components/Skymap/index";
+import ContentHeader from "@/components/ContentHeader";
+import ContentFooter from "@/components/ContentFooter";
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
+    TMap,
+    ContentHeader,
+    ContentFooter,
+  },
+};
 </script>
 
-<style>
+<style scoped>
+.top_floor_wrap {
+  padding: 0 32px 32px 32px;
+  background-color: rgba(0, 65, 128, 0.2);
+}
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  width: 100%;
+  height: 100%;
 }
 </style>
