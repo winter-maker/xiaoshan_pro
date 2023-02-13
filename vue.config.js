@@ -29,7 +29,8 @@ module.exports = defineConfig({
       cdn: {
         css: [],
         js: [
-          "http://api.tianditu.gov.cn/api?v=4.0&tk=9a253e27974ed47538a454861833f262",
+          "https://api.map.baidu.com/api?v=1.0&type=webgl&ak=zOny7QHaU3erFS3WYWAFK0fgHrf8Qhdr",
+          // "http://api.tianditu.gov.cn/api?v=4.0&tk=9a253e27974ed47538a454861833f262",
         ],
       },
     },
