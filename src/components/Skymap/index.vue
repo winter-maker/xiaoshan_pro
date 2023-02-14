@@ -12,8 +12,8 @@ export default {
       const map = new T.Map("mapDiv");
       const lnglat = new T.LngLat(116.40969, 39.89945);
       map.centerAndZoom(lnglat, 12);
-      //map.setStyle("indigo");
-      map.setStyle("@/assets/json/custom_map_config.json");
+      map.setStyle("indigo");
+      //map.setStyle("@/assets/json/custom_map_config.json");
       // 创建多边形
       let polygon = null,
         polygonList = [];

@@ -174,12 +174,8 @@ export default {
       }
     }
     .center_wrap {
-      position: absolute;
-      left: 24.6%;
-      right: 24.6%;
-      top: 20px;
-      bottom: 20px;
-      //z-index: -1;
+      // background: url("@/assets/images/center/bg.png") no-repeat 100% 100%;
+      box-shadow: 0px 0px 50px rgb(2 35 80 / 60%);
       .title_center {
         position: absolute;
         left: 50%;
@@ -187,7 +183,7 @@ export default {
         transform: translateX(-50%);
         z-index: 1111;
       }
-      //flex: 1;
+      flex: 1;
     }
   }
 }

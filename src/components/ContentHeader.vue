@@ -65,7 +65,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .content-header {
-  font-family: 35--Regular;
+  font-family: singleFont;
   text-align: center;
   line-height: 75px;
   margin: 0 -32px;

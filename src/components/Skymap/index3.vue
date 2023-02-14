@@ -13,9 +13,9 @@ export default {
       var point = new BMapGL.Point(116.404, 39.915); // 创建点坐标
       map.centerAndZoom(point, 15);
       map.enableScrollWheelZoom(true);
-      map.setMapStyleV2({
-        styleId: "248e61956ef5bf94307424c739fa317b",
-      });
+      let res = require("@/assets/json/deep_color.json");
+      console.log(res);
+      map.setMapStyleV2({ styleJson: res });
     },
     testProxy() {
       this.getRequest("/list").then((res) => {
@@ -64,7 +64,7 @@ export default {
   //   rgba(0, 14, 43, 1) 95%,
   //   rgba(0, 13, 42, 1) 100%
   // );
-  background: url("@/assets/images/center/bg.png") no-repeat 100% 100%;
+
   ::v-deep .tdt-bottom.tdt-left {
     display: none;
   }
