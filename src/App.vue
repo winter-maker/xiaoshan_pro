@@ -174,6 +174,7 @@ export default {
       }
     }
     .center_wrap {
+      position: relative;
       // background: url("@/assets/images/center/bg.png") no-repeat 100% 100%;
       box-shadow: 0px 0px 50px rgb(2 35 80 / 60%);
       .title_center {

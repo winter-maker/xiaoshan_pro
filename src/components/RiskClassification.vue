@@ -66,13 +66,16 @@ export default {
             barWidth: 18,
             showBackground: true,
             backgroundStyle: {
-              //color: "#86ffff",
-              width: 30,
+              color: "rgba(0, 0, 0, 0.2)",
+              borderColor: "rgba(0, 0, 0, 0.2)",
+              borderType: "solid",
+              shadowColor: "rgba(0, 0, 0, 0.2)",
+              opacity: 0.8,
             },
             itemStyle: {
               color: new this.$charts.graphic.LinearGradient(0, 0, 0, 1, [
-                { offset: 0, color: "rgba(82, 132, 251, 0.95)" },
-                { offset: 1, color: "#54eaff" },
+                { offset: 0, color: "#54eaff" },
+                { offset: 1, color: "rgba(82, 132, 251, 0.95)" },
               ]),
             },
           },

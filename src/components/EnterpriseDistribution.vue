@@ -67,11 +67,19 @@ export default {
       qyChart.setOption({
         title: {
           top: "center",
-          left: "30%",
-          text: "  18%\n建材行业",
+          left: "center",
+          text: "18%",
+          subtext: "建材行业",
+          subtextStyle: {
+            color: "#fff",
+            fontSize: 14,
+            lineHeight: 14,
+            align: "center",
+          },
           textStyle: {
             color: "#fff",
-            fontSize: "18px",
+            fontSize: 18,
+            lineHeight: 18,
             align: "center",
           },
         },
