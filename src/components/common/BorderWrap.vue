@@ -19,7 +19,8 @@ export default {
   width: 460px;
   height: 347px;
   //background-color: rgba(0, 80, 157, 0.25);
-  background: url("@/assets/images/common/block_bg.png") no-repeat 100% 100%;
+  background: url("@/assets/images/common/block_bg.png") no-repeat;
+  background-size: cover;
   position: relative;
   padding: 20px;
   h4 {
@@ -31,7 +32,8 @@ export default {
     height: 21px;
     line-height: 0;
     color: #fff;
-    background: url("@/assets/images/common/block_title.png") 100% 100%;
+    background: url("@/assets/images/common/block_title.png");
+    background-size: cover;
     font-family: singleFont;
     position: absolute;
     width: 100%;
@@ -43,7 +45,8 @@ export default {
     width: 15px;
     height: 9px;
     content: "";
-    background: url("@/assets/images/common/arrow_03.png") no-repeat 100% 100%;
+    background: url("@/assets/images/common/arrow_03.png") no-repeat;
+    background-size: cover;
     position: absolute;
     left: 0;
     top: -5px;

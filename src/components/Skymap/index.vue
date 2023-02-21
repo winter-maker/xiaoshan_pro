@@ -111,7 +111,8 @@ export default {
   //   rgba(0, 14, 43, 1) 95%,
   //   rgba(0, 13, 42, 1) 100%
   // );
-  background: url("@/assets/images/center/bg.png") no-repeat 100% 100%;
+  background: url("@/assets/images/center/bg.png") no-repeat;
+  background-size: cover;
   ::v-deep .tdt-bottom.tdt-left {
     display: none;
   }

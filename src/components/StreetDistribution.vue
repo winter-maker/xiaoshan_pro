@@ -12,7 +12,7 @@
         <div>
           <span :style="{ width: item.value + '%' }"></span>
         </div>
-        <span>{{ item.name }}</span>
+        <span class="center_span">{{ item.name }}</span>
         <div>
           <span :style="{ width: item.value2 + '%' }"></span>
         </div>
@@ -58,18 +58,19 @@ export default {
         width: 82px;
         height: 74px;
         text-align: center;
-        background: url("@/assets/images/leftBottom/font_bg1.png") no-repeat
-          100% 100%;
+        background: url("@/assets/images/leftBottom/font_bg1.png") no-repeat;
+        background-size: cover;
       }
       span {
         display: block;
-        width: 117px;
-        height: 26px;
+        width: 160px;
+        height: 36px;
         text-align: center;
-        line-height: 26px;
+        line-height: 36px;
         margin-top: 10px;
-        background: url("@/assets/images/leftBottom/font_bg2.png") no-repeat
-          100% 100%;
+        white-space: nowrap;
+        background: url("@/assets/images/leftBottom/font_bg2.png") no-repeat;
+        background-size: cover;
       }
     }
   }
@@ -82,6 +83,7 @@ export default {
     > div {
       display: flex;
       justify-content: space-between;
+      align-items: center;
 
       div {
         width: 110px;
@@ -121,6 +123,9 @@ export default {
         border-radius: 9px;
         text-align: center;
         line-height: 17px;
+      }
+      .center_span {
+        white-space: nowrap;
       }
     }
   }

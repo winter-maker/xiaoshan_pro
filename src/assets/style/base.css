@@ -87,6 +87,8 @@ body {
     font-family: MicrosoftYaHei;
     font-size: 12px;
     color: #fff;
+    background: url("@/assets/images/center/bg2.png") no-repeat;
+    background-size: cover;
     /*宋体，Unicode，统一码*/
 }
 

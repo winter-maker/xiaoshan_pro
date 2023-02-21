@@ -27,7 +27,8 @@ export default {
   width: 142px;
   height: 174px;
   //background-color: rgba(0, 94, 154, 0.16);
-  background: url("@/assets/images/leftTop/bg1.png") no-repeat 100% 100%;
+  background: url("@/assets/images/leftTop/bg1.png") no-repeat;
+  background-size: cover;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
@@ -38,7 +39,8 @@ export default {
   div {
     width: 82px;
     height: 82px;
-    background: url("@/assets/images/leftTop/bg_icon.png") no-repeat 100% 100%;
+    background: url("@/assets/images/leftTop/bg_icon.png") no-repeat;
+    background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -49,9 +51,17 @@ export default {
     width: 45px;
     height: 48px;
   }
+  //pad端
+  @media only screen and (min-width: 768px) and (max-width: 1199px) {
+    span {
+      transform: scale(0.8);
+    }
+  }
+
   span {
     font-size: 14px;
     line-height: 34px;
+    white-space: nowrap;
   }
   b {
     font-size: 26px;

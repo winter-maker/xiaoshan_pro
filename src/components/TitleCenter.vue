@@ -28,7 +28,8 @@ export default {
 .title_center_wrap {
   width: 598px;
   height: 127px;
-  background: url("@/assets/images/center/bg.png") no-repeat 100% 100%;
+  background: url("@/assets/images/center/bg.png") no-repeat;
+  background-size: cover;
   display: flex;
   > div:not(:first-child):before {
     content: "";
@@ -36,7 +37,8 @@ export default {
     height: 74px;
     position: absolute;
     left: 0;
-    background: url("@/assets/images/center/line.png") no-repeat 100% 100%;
+    background: url("@/assets/images/center/line.png") no-repeat;
+    background-size: cover;
   }
   > div {
     display: flex;
@@ -48,7 +50,8 @@ export default {
   .img_div {
     width: 72px;
     height: 72px;
-    background: url("@/assets/images/center/icon_bg.png") no-repeat 100% 100%;
+    background: url("@/assets/images/center/icon_bg.png") no-repeat;
+    background-size: cover;
     display: flex;
     align-items: center;
     justify-content: center;

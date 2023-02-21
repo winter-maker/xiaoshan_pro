@@ -2,24 +2,70 @@
   <div id="mapDiv"></div>
 </template>
 <script>
+let map = null;
 export default {
   mounted() {
+    map = new BMapGL.Map("mapDiv"); // 创建地图实例
     this.createMap();
     this.testProxy();
   },
   methods: {
     createMap() {
-      var map = new BMapGL.Map("mapDiv"); // 创建地图实例
-      var point = new BMapGL.Point(116.404, 39.915); // 创建点坐标
-      map.centerAndZoom(point, 15);
+      let point = new BMapGL.Point(116.404, 39.915); // 创建点坐标
+      map.centerAndZoom("萧山区", 14);
       map.enableScrollWheelZoom(true);
       let res = require("@/assets/json/deep_color.json");
       console.log(res);
       map.setMapStyleV2({ styleJson: res });
+      // map.setHeading(64.5);
+      // map.setTilt(73);
+
+      this.createPolygon();
+    },
+    createPolygon() {
+      let bd = new BMapGL.Boundary();
+      let enters = require("@/assets/json/enter.json");
+      let colors = ["#0297ca", "#826950", "#08b99a", "#6985e6"];
+      for (let key in enters) {
+        let str = "";
+        console.log(key);
+        enters[key].forEach((item) => {
+          str += item + ";";
+        });
+        str = str.substring(0, str.length - 1);
+        let ply = new BMapGL.Polygon([str], {
+          strokeWeight: 2,
+          strokeColor: colors[key % colors.length],
+          fillColor: colors[key % colors.length],
+          fillOpacity: 0.3,
+        }); //建立多边形覆盖物
+        map.addOverlay(ply); //添加覆盖物
+      }
+      bd.get("萧山区", function (rs) {
+        let count = rs.boundaries.length;
+        // for (let i = 0; i < count; i++) {
+        //   let ply = new BMapGL.Polygon(rs.boundaries[i], {
+        //     strokeWeight: 2,
+        //     strokeColor: "#F5533D",
+        //     fillColor: "#F5533D",
+        //     fillOpacity: 0.3,
+        //   }); //建立多边形覆盖物
+        //   map.addOverlay(ply); //添加覆盖物
+        // }
+
+        console.log("---杭州萧山金逸包装有限公司rs---", rs, count);
+        // let hole = new BMapGL.Polygon(rs.boundaries, {
+        //   strokeWeight: 2,
+        //   strokeColor: "#00e4ff",
+        //   fillColor: "#00e4ff",
+        //   fillOpacity: 0.4,
+        // });
+        // map.addOverlay(hole);
+      });
     },
     testProxy() {
       this.getRequest("/list").then((res) => {
-        console.log(res);
+        //console.log(res);
       });
     },
   },

@@ -10,7 +10,13 @@
       >
     </div>
     <div class="chart_wrap">
-      <div id="qy_chart" class="chart" />
+      <div class="qy_warp">
+        <div id="qy_chart" class="chart" />
+        <div class="tip_div">
+          <span>18%</span>
+          <span>建材行业</span>
+        </div>
+      </div>
       <ul>
         <li v-for="(item, index) in arr" :key="index">
           <span :style="{ background: colors[index] }" />
@@ -66,20 +72,19 @@ export default {
       const qyChart = this.$charts.init(document.getElementById("qy_chart"));
       qyChart.setOption({
         title: {
+          show: false,
           top: "center",
           left: "center",
           text: "18%",
           subtext: "建材行业",
           subtextStyle: {
             color: "#fff",
-            fontSize: 14,
-            lineHeight: 14,
+            fontSize: 12,
             align: "center",
           },
           textStyle: {
             color: "#fff",
-            fontSize: 18,
-            lineHeight: 18,
+            fontSize: 14,
             align: "center",
           },
         },
@@ -133,37 +138,67 @@ export default {
           },
         ],
       });
+      window.onresize = () => {
+        qyChart.resize();
+      };
     },
   },
 };
 </script>
 <style lang="scss" scoped>
 .filter_wrap {
-  width: 107px;
-  height: 24px;
-  background: url("@/assets/images/common/button_bg.png") no-repeat 100% 100%;
+  width: 134px;
+  height: 30px;
+  background: url("@/assets/images/common/button_bg.png") no-repeat;
+  background-size: cover;
   border-radius: 12px;
   color: #fff;
   display: flex;
   font-size: 14px;
   .active {
-    width: 54px;
-    height: 24px;
-    background: url("@/assets/images/common/button_hover.png") no-repeat 100%
-      100%;
+    width: 70px;
+    height: 30px;
+    background: url("@/assets/images/common/button_hover.png") no-repeat;
+    background-size: cover;
     border-radius: 12px;
   }
   span {
     flex: 1;
     text-align: center;
-    line-height: 24px;
+    line-height: 30px;
     cursor: pointer;
+    min-width: 70px;
   }
 }
 .chart_wrap {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: calc(100% - 30px);
+  .qy_warp {
+    position: relative;
+  }
+  .tip_div {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    span {
+      text-align: center;
+    }
+    span:nth-child(1) {
+      font-size: 16px;
+    }
+    span:nth-child(2) {
+      font-size: 18px;
+    }
+  }
 }
 .enterprise_dis {
   height: 100%;
@@ -171,6 +206,14 @@ export default {
   .chart {
     width: 180px;
     height: 180px;
+  }
+  //pad端
+  @media only screen and (min-width: 768px) and (max-width: 1199px) {
+    span {
+      transform: scale(0.8);
+      transform-origin: 0 0;
+      //margin-bottom: 3px;
+    }
   }
   ul {
     li {

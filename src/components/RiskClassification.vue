@@ -31,10 +31,11 @@ export default {
           },
           axisLabel: {
             color: "#fff",
+            fontSize: 12,
           },
         },
         grid: {
-          top: 40,
+          top: "10%",
           left: 0,
           right: 0,
           bottom: 0,
@@ -63,7 +64,7 @@ export default {
           {
             data: [120, 200, 150, 80, 70, 110, 130],
             type: "bar",
-            barWidth: 18,
+            barWidth: "20%",
             showBackground: true,
             backgroundStyle: {
               color: "rgba(0, 0, 0, 0.2)",
@@ -82,6 +83,9 @@ export default {
         ],
       };
       dom.setOption(option);
+      window.onresize = () => {
+        dom.resize();
+      };
     },
   },
 };

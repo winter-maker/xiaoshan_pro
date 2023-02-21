@@ -41,7 +41,8 @@ export default {
   position: relative;
   top: -48px;
   left: 42px;
-  background: url("@/assets/images/center/tab_07.png") no-repeat 100% 100%;
+  background: url("@/assets/images/center/tab_07.png") no-repeat;
+  background-size: cover;
   display: flex;
   ul {
     margin: 0 auto;
@@ -50,7 +51,8 @@ export default {
     left: -15px;
     .active {
       color: #fff;
-      background: url("@/assets/images/center/hover.png") no-repeat 100% 100%;
+      background: url("@/assets/images/center/hover.png") no-repeat;
+      background-size: cover;
     }
     li {
       font-size: 18px;
@@ -58,16 +60,17 @@ export default {
       //margin-left: 25px;
       color: #bdedff;
       //padding: 0 12px;
-      width: 85px;
+      width: 90px;
       text-align: center;
       cursor: pointer;
+      white-space: nowrap;
     }
     li:nth-child(1) {
-      margin-left: 0;
+      margin-left: 30px;
     }
-    li:last-child {
-      margin-right: 35px;
-    }
+    // li:last-child {
+    //   margin-right: 35px;
+    // }
   }
 }
 </style>

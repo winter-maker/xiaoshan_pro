@@ -72,7 +72,8 @@ export default {
   font-size: 32px;
   letter-spacing: 1px;
   //box-shadow: 0px 2px 2px 0px #002e97;
-  background: url("@/assets/images/title/title_01.png") no-repeat 100% 100%;
+  background: url("@/assets/images/title/title_01.png") no-repeat;
+  background-size: cover;
   display: flex;
   justify-content: space-between;
   //align-items: center;

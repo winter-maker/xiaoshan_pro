@@ -24,7 +24,8 @@ export default {
   width: 143px;
   height: 149px;
   //background-color: rgba(0, 94, 154, 0.16);
-  background: url("@/assets/images/rightTop/icon_bg.png") no-repeat 100% 100%;
+  background: url("@/assets/images/rightTop/icon_bg.png") no-repeat;
+  background-size: cover;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
@@ -37,6 +38,12 @@ export default {
     width: 30px;
     height: 30px;
     margin: 8px 0;
+  }
+  //pad端
+  @media only screen and (min-width: 768px) and (max-width: 1199px) {
+    span {
+      transform: scale(0.8);
+    }
   }
   span {
     font-size: 14px;
