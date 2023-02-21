@@ -194,7 +194,7 @@
         "featureType": "scenicspots",
         "elementType": "labels.text.stroke",
         "stylers": {
-            "weight": 1,
+            "weight": 3,
             "color": "#7e8a4aff",
             "visibility": "off"
         }
@@ -205,7 +205,7 @@
         "stylers": {
             "color": "#7e8a4aff",
             "visibility": "off",
-            "weight": 1
+            "weight": 3
         }
     },
     {
@@ -214,7 +214,7 @@
         "stylers": {
             "color": "#7e8a4aff",
             "visibility": "off",
-            "weight": 1
+            "weight": 3
         }
     },
     {
@@ -223,7 +223,7 @@
         "stylers": {
             "color": "#7e8a4aff",
             "visibility": "off",
-            "weight": 1
+            "weight": 3
         }
     },
     {
@@ -239,7 +239,7 @@
         "stylers": {
             "color": "#7e8a4aff",
             "visibility": "off",
-            "weight": 1
+            "weight": 3
         }
     },
     {
@@ -248,7 +248,7 @@
         "stylers": {
             "color": "#7e8a4aff",
             "visibility": "off",
-            "weight": 1
+            "weight": 3
         }
     },
     {
@@ -257,7 +257,7 @@
         "stylers": {
             "color": "#7e8a4aff",
             "visibility": "off",
-            "weight": 1
+            "weight": 3
         }
     },
     {
@@ -343,7 +343,7 @@
         "stylers": {
             "color": "#021132ff",
             "visibility": "on",
-            "weight": 90
+            "weight": 10
         }
     },
     {
@@ -352,7 +352,7 @@
         "stylers": {
             "color": "#7e8a4aff",
             "visibility": "off",
-            "weight": 1
+            "weight": 3
         }
     },
     {
@@ -532,7 +532,7 @@
         "stylers": {
             "color": "#7e8a4aff",
             "visibility": "off",
-            "weight": 1
+            "weight": 3
         }
     },
     {
@@ -594,7 +594,7 @@
         "stylers": {
             "color": "#7e8a4aff",
             "visibility": "off",
-            "weight": 1
+            "weight": 3
         }
     },
     {
@@ -714,7 +714,7 @@
         "stylers": {
             "color": "#7e8a4aff",
             "visibility": "off",
-            "weight": 1
+            "weight": 3
         }
     },
     {
@@ -763,7 +763,7 @@
         "stylers": {
             "color": "#7e8a4aff",
             "visibility": "off",
-            "weight": 1
+            "weight": 3
         }
     },
     {
@@ -772,7 +772,7 @@
         "stylers": {
             "color": "#7e8a4aff",
             "visibility": "off",
-            "weight": 1
+            "weight": 3
         }
     },
     {
@@ -781,7 +781,7 @@
         "stylers": {
             "color": "#7e8a4aff",
             "visibility": "off",
-            "weight": 1
+            "weight": 3
         }
     },
     {
@@ -790,7 +790,7 @@
         "stylers": {
             "color": "#7e8a4aff",
             "visibility": "off",
-            "weight": 1
+            "weight": 3
         }
     },
     {
@@ -799,28 +799,28 @@
         "stylers": {
             "color": "#7e8a4aff",
             "visibility": "off",
-            "weight": 1
+            "weight": 3
         }
     },
     {
         "featureType": "fourlevelway",
         "elementType": "geometry",
         "stylers": {
-            "weight": 1
+            "weight": 3
         }
     },
     {
         "featureType": "tertiaryway",
         "elementType": "geometry",
         "stylers": {
-            "weight": 1
+            "weight": 3
         }
     },
     {
         "featureType": "local",
         "elementType": "geometry",
         "stylers": {
-            "weight": 1
+            "weight": 3
         }
     },
     {
@@ -1282,14 +1282,14 @@
         "featureType": "building",
         "elementType": "geometry.topfill",
         "stylers": {
-            "color": "#083f7aff"
+            "color": "#11a4d9ff"
         }
     },
     {
         "featureType": "building",
         "elementType": "geometry.sidefill",
         "stylers": {
-            "color": "#11a4d9ff"
+            "color": "#083f7aff"
         }
     },
     {

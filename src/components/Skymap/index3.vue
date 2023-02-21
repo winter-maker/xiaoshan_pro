@@ -12,7 +12,7 @@ export default {
   methods: {
     createMap() {
       let point = new BMapGL.Point(116.404, 39.915); // 创建点坐标
-      map.centerAndZoom("萧山区", 14);
+      map.centerAndZoom("萧山区", 18);
       map.enableScrollWheelZoom(true);
       let res = require("@/assets/json/deep_color.json");
       console.log(res);
@@ -24,8 +24,8 @@ export default {
     },
     createPolygon() {
       let bd = new BMapGL.Boundary();
-      let enters = require("@/assets/json/enter.json");
-      let colors = ["#0297ca", "#826950", "#08b99a", "#6985e6"];
+      let enters = require("@/assets/json/level_18.json");
+      let colors = ["#04ff98", "#c36efe", "#2e88f1", "#ff7e00"];
       for (let key in enters) {
         let str = "";
         console.log(key);
@@ -86,32 +86,32 @@ export default {
   //   rgba(4, 82, 152, 0.5) 77%,
   //   #00244b 100%
   // );
-  // background: linear-gradient(
-  //   90deg,
-  //   rgba(0, 13, 42, 1) 0%,
-  //   rgba(0, 14, 43, 1) 5%,
-  //   rgba(0, 15, 46, 1) 10%,
-  //   rgba(0, 16, 50, 1) 15%,
-  //   rgba(0, 18, 54, 1) 20%,
-  //   rgba(1, 23, 67, 1) 25%,
-  //   rgba(2, 24, 74, 0.8) 30%,
-  //   rgba(3, 29, 87, 0.8) 35%,
-  //   rgba(4, 34, 97, 0.8) 40%,
-  //   rgba(4, 44, 104, 0.8) 45%,
-  //   rgba(4, 44, 104, 0.6) 50%,
-  //   rgba(4, 44, 104, 0.8) 55%,
-  //   rgba(4, 34, 97, 0.8) 60%,
-  //   rgba(3, 29, 87, 0.8) 65%,
-  //   rgba(2, 24, 74, 0.8) 70%,
-  //   rgba(1, 23, 67, 1) 75%,
-  //   rgba(0, 18, 54, 1) 80%,
-  //   rgba(0, 16, 50, 1) 85%,
-  //   rgba(0, 15, 46, 1) 90%,
-  //   rgba(0, 14, 43, 1) 95%,
-  //   rgba(0, 13, 42, 1) 100%
-  // );
+  background: linear-gradient(
+    90deg,
+    rgba(0, 13, 42, 1) 0%,
+    rgba(0, 14, 43, 1) 5%,
+    rgba(0, 15, 46, 1) 10%,
+    rgba(0, 16, 50, 1) 15%,
+    rgba(0, 18, 54, 1) 20%,
+    rgba(1, 23, 67, 1) 25%,
+    rgba(2, 24, 74, 0.8) 30%,
+    rgba(3, 29, 87, 0.8) 35%,
+    rgba(4, 34, 97, 0.8) 40%,
+    rgba(4, 44, 104, 0.8) 45%,
+    rgba(4, 44, 104, 0.6) 50%,
+    rgba(4, 44, 104, 0.8) 55%,
+    rgba(4, 34, 97, 0.8) 60%,
+    rgba(3, 29, 87, 0.8) 65%,
+    rgba(2, 24, 74, 0.8) 70%,
+    rgba(1, 23, 67, 1) 75%,
+    rgba(0, 18, 54, 1) 80%,
+    rgba(0, 16, 50, 1) 85%,
+    rgba(0, 15, 46, 1) 90%,
+    rgba(0, 14, 43, 1) 95%,
+    rgba(0, 13, 42, 1) 100%
+  );
 
-  ::v-deep .tdt-bottom.tdt-left {
+  ::v-deep .anchorBL {
     display: none;
   }
 }

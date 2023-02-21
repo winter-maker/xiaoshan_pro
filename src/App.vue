@@ -16,6 +16,7 @@
       <div class="center_wrap">
         <TitleCenter :list="title_center_list" class="title_center" />
         <TMap />
+        <TroubleshootingPlan class="content_center" />
       </div>
       <div class="right_wrap">
         <div class="right_top_nav">
@@ -43,6 +44,7 @@ import ContentFooter from "@/components/ContentFooter";
 import BorderWrap from "@/components/common/BorderWrap";
 import RiskClassification from "@/components/RiskClassification";
 import StreetDistribution from "@/components/StreetDistribution";
+import TroubleshootingPlan from "@/components/TroubleshootingPlan";
 import TroubleshootingTrends from "@/components/TroubleshootingTrends";
 import EnterpriseDistribution from "@/components/EnterpriseDistribution";
 export default {
@@ -57,6 +59,7 @@ export default {
     ContentFooter,
     RiskClassification,
     StreetDistribution,
+    TroubleshootingPlan,
     TroubleshootingTrends,
     EnterpriseDistribution,
   },
@@ -156,6 +159,13 @@ export default {
         top: 0px;
         transform: translateX(-50%);
         z-index: 1111;
+      }
+      .content_center {
+        padding: 0 30px;
+        position: absolute;
+        bottom: 60px;
+        left: 0;
+        right: 0;
       }
       flex: 1;
     }
