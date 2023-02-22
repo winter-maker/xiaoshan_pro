@@ -33,10 +33,11 @@ export default {
           str += item + ";";
         });
         str = str.substring(0, str.length - 1);
+        console.log("---str----", str);
         let ply = new BMapGL.Polygon([str], {
           strokeWeight: 2,
-          strokeColor: colors[key % colors.length],
-          fillColor: colors[key % colors.length],
+          strokeColor: colors[1],
+          fillColor: colors[1],
           fillOpacity: 0.3,
         }); //建立多边形覆盖物
         map.addOverlay(ply); //添加覆盖物

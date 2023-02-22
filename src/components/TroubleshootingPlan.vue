@@ -38,6 +38,7 @@ export default {
 .troubleshoot_wrap {
   display: flex;
   justify-content: space-between;
+  font-size: 12px;
   .left {
     display: flex;
     flex-direction: column;
@@ -55,7 +56,7 @@ export default {
     }
   }
   .right {
-    width: 600px;
+    width: 520px;
     background-color: rgba(1, 51, 140, 0.7);
     font-size: 15px;
     padding: 10px 20px;
