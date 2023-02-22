@@ -16,7 +16,14 @@
       <div class="center_wrap">
         <TitleCenter :list="title_center_list" class="title_center" />
         <TMap />
-        <TroubleshootingPlan class="content_center" />
+        <div class="content_center_warp">
+          <div class="content_center_trigger" @click="count++">
+            <span>排查计划</span>
+            <b />
+          </div>
+          {{ count }}{{ count % 2 === 0 }}
+          <TroubleshootingPlan v-show="count % 2 === 0" />
+        </div>
       </div>
       <div class="right_wrap">
         <div class="right_top_nav">
@@ -113,6 +120,7 @@ export default {
           img: require("@/assets/images/center/icon2.png"),
         },
       ],
+      count: 0,
     };
   },
 };
@@ -153,19 +161,41 @@ export default {
     .center_wrap {
       position: relative;
       box-shadow: 0px 0px 50px rgb(2 35 80 / 60%);
+      .content_center_warp {
+        position: absolute;
+        min-height: 138px;
+        bottom: 60px;
+        left: 0;
+        right: 0;
+        .content_center_trigger {
+          position: absolute;
+          right: 30px;
+          top: -25px;
+          width: 90px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+
+          span {
+            font-family: singleFont;
+            font-size: 16px;
+          }
+          b {
+            width: 0px;
+            height: 0px;
+            cursor: pointer;
+            border-top: 9px solid #ffd200;
+            border-left: 7px solid transparent;
+            border-right: 7px solid transparent;
+          }
+        }
+      }
       .title_center {
         position: absolute;
         left: 50%;
         top: 0px;
         transform: translateX(-50%);
         z-index: 1111;
-      }
-      .content_center {
-        padding: 0 30px;
-        position: absolute;
-        bottom: 60px;
-        left: 0;
-        right: 0;
       }
       flex: 1;
     }
