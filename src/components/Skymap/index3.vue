@@ -25,20 +25,19 @@ export default {
     createPolygon() {
       let bd = new BMapGL.Boundary();
       let enters = require("@/assets/json/level_18.json");
-      let colors = ["#04ff98", "#c36efe", "#2e88f1", "#ff7e00"];
+      // let colors = ["#04ff98", "#c36efe", "#2e88f1", "#ff7e00"];
+      let colors = ["#23d5fc", "#33daa8", "#b48f61", "#9582ee"];
       for (let key in enters) {
         let str = "";
-        console.log(key);
         enters[key].forEach((item) => {
           str += item + ";";
         });
         str = str.substring(0, str.length - 1);
-        console.log("---str----", str);
         let ply = new BMapGL.Polygon([str], {
           strokeWeight: 2,
-          strokeColor: colors[1],
-          fillColor: colors[1],
-          fillOpacity: 0.3,
+          strokeColor: colors[key%4],
+          fillColor: colors[key%4],
+          fillOpacity: 0.7,
         }); //建立多边形覆盖物
         map.addOverlay(ply); //添加覆盖物
       }
