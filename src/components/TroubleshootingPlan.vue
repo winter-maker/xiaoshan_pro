@@ -43,7 +43,7 @@ export default {
   .left {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-evenly;
     b {
       display: inline-block;
       width: 22px;
@@ -61,6 +61,7 @@ export default {
     background-color: rgba(1, 51, 140, 0.7);
     font-size: 15px;
     padding: 10px 20px;
+    color: #eee;
 
     > div {
       display: flex;

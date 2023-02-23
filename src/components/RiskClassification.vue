@@ -23,7 +23,7 @@ export default {
           ],
           axisLine: {
             lineStyle: {
-              color: "#395e8d",
+              color: "rgba(0, 58, 165, 0.7)",
             },
           },
           axisTick: {
@@ -45,7 +45,7 @@ export default {
           type: "value",
           axisLine: {
             lineStyle: {
-              color: "#395e8d",
+              color: "rgba(0, 58, 165, 0.7)",
             },
             show: true,
           },
@@ -54,7 +54,7 @@ export default {
           },
           splitLine: {
             lineStyle: {
-              color: "#395e8d",
+              color: "rgba(0, 58, 165, 0.7)",
               type: "dashed",
             },
           },
@@ -67,10 +67,10 @@ export default {
             barWidth: "20%",
             showBackground: true,
             backgroundStyle: {
-              color: "rgba(0, 0, 0, 0.2)",
-              borderColor: "rgba(0, 0, 0, 0.2)",
+              color: "rgba(238, 238, 238, 0.1)",
+              borderColor: "rgba(238, 238, 238, 0.1)",
               borderType: "solid",
-              shadowColor: "rgba(0, 0, 0, 0.2)",
+              shadowColor: "rgba(238, 238, 238, 0.1)",
               opacity: 0.8,
             },
             itemStyle: {

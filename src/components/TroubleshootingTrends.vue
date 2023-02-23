@@ -86,7 +86,7 @@ export default {
             },
             axisLine: {
               lineStyle: {
-                color: "#395e8d",
+                color: "rgba(0, 58, 165, 0.7)",
               },
               show: true,
             },
@@ -109,7 +109,7 @@ export default {
             },
             axisLine: {
               lineStyle: {
-                color: "#395e8d",
+                color: "rgba(0, 58, 165, 0.7)",
               },
               show: true,
             },
@@ -118,7 +118,7 @@ export default {
             },
             splitLine: {
               lineStyle: {
-                color: "#395e8d",
+                color: "rgba(0, 58, 165, 0.7)",
                 type: "dashed",
               },
             },
@@ -129,7 +129,7 @@ export default {
           type: "category",
           axisLine: {
             lineStyle: {
-              color: "#395e8d",
+              color: "rgba(0, 58, 165, 0.7)",
             },
           },
           axisTick: {

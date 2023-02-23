@@ -42,6 +42,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .street_dis {
+  font-size: 15px;
   .top {
     display: flex;
     justify-content: space-around;
@@ -63,14 +64,15 @@ export default {
       }
       span {
         display: block;
-        width: 160px;
-        height: 36px;
+        //width: 160px;
+        height: 26px;
+        padding: 0 20px;
         text-align: center;
-        line-height: 36px;
+        line-height: 26px;
         margin-top: 10px;
         white-space: nowrap;
         background: url("@/assets/images/leftBottom/font_bg2.png") no-repeat;
-        background-size: cover;
+        background-size: 100% 100%;
       }
     }
   }
@@ -123,6 +125,8 @@ export default {
         border-radius: 9px;
         text-align: center;
         line-height: 17px;
+        font-size: 14px;
+        color: #051835;
       }
       .center_span {
         white-space: nowrap;

@@ -37,8 +37,9 @@ export default {
 <style lang="scss" scoped>
 .content_footer {
   height: 51px;
-  position: relative;
-  top: -48px;
+  position: absolute;
+  width: 100%;
+  bottom: 20px;
   background: url("@/assets/images/center/tab_07.png") no-repeat;
   padding-right: 35px;
   background-size: cover;

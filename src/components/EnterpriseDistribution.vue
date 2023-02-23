@@ -18,8 +18,12 @@
         </div>
       </div>
       <ul>
-        <li v-for="(item, index) in arr" :key="index">
-          <span :style="{ background: colors[index] }" />
+        <li
+          v-for="(item, index) in arr"
+          :key="index"
+          :class="index === activeIndex ? 'active2' : ''"
+        >
+          <span :style="{ background: colors2[index % 9] }" />
           <span>{{ item.name }}</span>
           <span>{{ item.value }}</span>
           <span>{{ item.prop }}</span>
@@ -48,6 +52,17 @@ export default {
         "#50bbb0",
         "#59abf6",
       ],
+      colors2: [
+        "rgb(132,194,244)",
+        "rgb(39,188,191)",
+        "rgb(17,94,170)",
+        "rgb(12,133,253)",
+        "rgb(83,171,246)",
+        "rgb(88,80,167)",
+        "rgb(24,78,150)",
+        "rgb(39,125,183)",
+        "rgb(17,94,170)",
+      ],
       arr: [
         { name: "冶金行业", value: 123, prop: "10%" },
         { name: "有色行业", value: 123, prop: "10%" },
@@ -59,6 +74,7 @@ export default {
         { name: "商贸行业", value: 123, prop: "10%" },
         { name: "化工行业", value: 123, prop: "10%" },
       ],
+      activeIndex: 2,
     };
   },
   mounted() {
@@ -71,6 +87,7 @@ export default {
     getChart() {
       const qyChart = this.$charts.init(document.getElementById("qy_chart"));
       qyChart.setOption({
+        color: this.colors2,
         title: {
           show: false,
           top: "center",
@@ -193,10 +210,10 @@ export default {
       text-align: center;
     }
     span:nth-child(1) {
-      font-size: 16px;
+      font-size: 18px;
     }
     span:nth-child(2) {
-      font-size: 18px;
+      font-size: 14px;
     }
   }
 }
@@ -204,26 +221,35 @@ export default {
   height: 100%;
   padding-top: 20px;
   .chart {
-    width: 180px;
-    height: 180px;
+    width: 142px;
+    height: 142px;
   }
   //pad端
   @media only screen and (min-width: 768px) and (max-width: 1199px) {
     span {
       transform: scale(0.8);
       transform-origin: 0 0;
-      //margin-bottom: 3px;
+    }
+  }
+  @media only screen and (min-width: 1199px) {
+    span {
+      transform: scale(1);
+      transform-origin: 0 0;
     }
   }
   ul {
+    .active2 {
+      background-color: rgba(77, 136, 245, 0.7);
+    }
     li {
       display: flex;
       justify-content: space-between;
       align-items: center;
       width: 200px;
       height: 30px;
-
-      border-bottom: 1px solid #003aa5;
+      font-size: 14px;
+      border-bottom: 1px solid rgba(0, 58, 165, 0.7);
+      padding: 0 5px;
 
       span:nth-child(1) {
         width: 10px;

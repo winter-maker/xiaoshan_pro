@@ -67,7 +67,7 @@ export default {
 .content-header {
   text-align: center;
   line-height: 75px;
-  margin: 0 -32px;
+  //margin: 0 -32px;
   height: 75px;
   font-size: 32px;
   letter-spacing: 1px;
@@ -78,6 +78,7 @@ export default {
   justify-content: space-between;
   //align-items: center;
   position: relative;
+  z-index: 1;
 
   h1 {
     font-family: singleFont;
