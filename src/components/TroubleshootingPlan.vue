@@ -39,6 +39,7 @@ export default {
   display: flex;
   justify-content: space-between;
   font-size: 12px;
+  padding: 0 30px;
   .left {
     display: flex;
     flex-direction: column;
