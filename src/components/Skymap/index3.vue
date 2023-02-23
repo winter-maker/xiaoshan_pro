@@ -11,8 +11,8 @@ export default {
   },
   methods: {
     createMap() {
-      let point = new BMapGL.Point(116.404, 39.915); // 创建点坐标
-      map.centerAndZoom("萧山区", 18);
+      let point = new BMapGL.Point(120.342904, 30.231047); // 创建点坐标
+      map.centerAndZoom(point, 18);
       map.enableScrollWheelZoom(true);
       let res = require("@/assets/json/deep_color.json");
       console.log(res);
@@ -24,21 +24,34 @@ export default {
     },
     createPolygon() {
       let bd = new BMapGL.Boundary();
-      let enters = require("@/assets/json/level_18.json");
+      let enters = require("@/assets/json/tech_city.json");
       let colors = ["#04ff98", "#c36efe", "#2e88f1", "#ff7e00"];
       for (let key in enters) {
         let str = "";
-        console.log(key);
+        console.log(key, enters);
         enters[key].forEach((item) => {
           str += item + ";";
         });
+        let slice_length = Math.floor(Object.values(enters).length / 4);
+        let color = "";
+        let index = (key - 0 + 1) / slice_length;
+        if (index <= 1) {
+          color = colors[0];
+        } else if (index <= 2) {
+          color = colors[1];
+        } else if (index <= 3) {
+          color = colors[2];
+        } else {
+          color = colors[3];
+        }
+        console.log(slice_length);
         str = str.substring(0, str.length - 1);
-        console.log("---str----", str);
+        //console.log("---str----", str);
         let ply = new BMapGL.Polygon([str], {
           strokeWeight: 2,
-          strokeColor: colors[1],
-          fillColor: colors[1],
-          fillOpacity: 0.3,
+          strokeColor: color,
+          fillColor: color,
+          fillOpacity: 0.6,
         }); //建立多边形覆盖物
         map.addOverlay(ply); //添加覆盖物
       }
@@ -87,30 +100,30 @@ export default {
   //   rgba(4, 82, 152, 0.5) 77%,
   //   #00244b 100%
   // );
-  background: linear-gradient(
-    90deg,
-    rgba(0, 13, 42, 1) 0%,
-    rgba(0, 14, 43, 1) 5%,
-    rgba(0, 15, 46, 1) 10%,
-    rgba(0, 16, 50, 1) 15%,
-    rgba(0, 18, 54, 1) 20%,
-    rgba(1, 23, 67, 1) 25%,
-    rgba(2, 24, 74, 0.8) 30%,
-    rgba(3, 29, 87, 0.8) 35%,
-    rgba(4, 34, 97, 0.8) 40%,
-    rgba(4, 44, 104, 0.8) 45%,
-    rgba(4, 44, 104, 0.6) 50%,
-    rgba(4, 44, 104, 0.8) 55%,
-    rgba(4, 34, 97, 0.8) 60%,
-    rgba(3, 29, 87, 0.8) 65%,
-    rgba(2, 24, 74, 0.8) 70%,
-    rgba(1, 23, 67, 1) 75%,
-    rgba(0, 18, 54, 1) 80%,
-    rgba(0, 16, 50, 1) 85%,
-    rgba(0, 15, 46, 1) 90%,
-    rgba(0, 14, 43, 1) 95%,
-    rgba(0, 13, 42, 1) 100%
-  );
+  // background: linear-gradient(
+  //   90deg,
+  //   rgba(0, 13, 42, 1) 0%,
+  //   rgba(0, 14, 43, 1) 5%,
+  //   rgba(0, 15, 46, 1) 10%,
+  //   rgba(0, 16, 50, 1) 15%,
+  //   rgba(0, 18, 54, 1) 20%,
+  //   rgba(1, 23, 67, 1) 25%,
+  //   rgba(2, 24, 74, 0.8) 30%,
+  //   rgba(3, 29, 87, 0.8) 35%,
+  //   rgba(4, 34, 97, 0.8) 40%,
+  //   rgba(4, 44, 104, 0.8) 45%,
+  //   rgba(4, 44, 104, 0.6) 50%,
+  //   rgba(4, 44, 104, 0.8) 55%,
+  //   rgba(4, 34, 97, 0.8) 60%,
+  //   rgba(3, 29, 87, 0.8) 65%,
+  //   rgba(2, 24, 74, 0.8) 70%,
+  //   rgba(1, 23, 67, 1) 75%,
+  //   rgba(0, 18, 54, 1) 80%,
+  //   rgba(0, 16, 50, 1) 85%,
+  //   rgba(0, 15, 46, 1) 90%,
+  //   rgba(0, 14, 43, 1) 95%,
+  //   rgba(0, 13, 42, 1) 100%
+  // );
 
   ::v-deep .anchorBL {
     display: none;

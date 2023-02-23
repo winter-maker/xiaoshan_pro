@@ -19,7 +19,7 @@
         "featureType": "building",
         "elementType": "geometry.fill",
         "stylers": {
-            "color": "#002152ff",
+            "color": "#000f39ff",
             "visibility": "on"
         }
     },
@@ -27,7 +27,7 @@
         "featureType": "building",
         "elementType": "geometry.stroke",
         "stylers": {
-            "color": "#000f39ff",
+            "color": "#002152ff",
             "visibility": "on"
         }
     },
@@ -196,7 +196,7 @@
         "stylers": {
             "weight": 3,
             "color": "#7e8a4aff",
-            "visibility": "off"
+            "visibility": "on"
         }
     },
     {
@@ -204,7 +204,7 @@
         "elementType": "labels.text.stroke",
         "stylers": {
             "color": "#7e8a4aff",
-            "visibility": "off",
+            "visibility": "on",
             "weight": 3
         }
     },
@@ -213,7 +213,7 @@
         "elementType": "labels.text.stroke",
         "stylers": {
             "color": "#7e8a4aff",
-            "visibility": "off",
+            "visibility": "on",
             "weight": 3
         }
     },
@@ -222,7 +222,7 @@
         "elementType": "labels.text.stroke",
         "stylers": {
             "color": "#7e8a4aff",
-            "visibility": "off",
+            "visibility": "on",
             "weight": 3
         }
     },
@@ -238,7 +238,7 @@
         "elementType": "labels.text.stroke",
         "stylers": {
             "color": "#7e8a4aff",
-            "visibility": "off",
+            "visibility": "on",
             "weight": 3
         }
     },
@@ -247,7 +247,7 @@
         "elementType": "labels.text.stroke",
         "stylers": {
             "color": "#7e8a4aff",
-            "visibility": "off",
+            "visibility": "on",
             "weight": 3
         }
     },
@@ -256,7 +256,7 @@
         "elementType": "labels.text.stroke",
         "stylers": {
             "color": "#7e8a4aff",
-            "visibility": "off",
+            "visibility": "on",
             "weight": 3
         }
     },
@@ -351,7 +351,7 @@
         "elementType": "labels.text.stroke",
         "stylers": {
             "color": "#7e8a4aff",
-            "visibility": "off",
+            "visibility": "on",
             "weight": 3
         }
     },
@@ -593,7 +593,7 @@
         "elementType": "labels.text.stroke",
         "stylers": {
             "color": "#7e8a4aff",
-            "visibility": "off",
+            "visibility": "on",
             "weight": 3
         }
     },
@@ -713,7 +713,7 @@
         "elementType": "labels.text.stroke",
         "stylers": {
             "color": "#7e8a4aff",
-            "visibility": "off",
+            "visibility": "on",
             "weight": 3
         }
     },
@@ -762,7 +762,7 @@
         "elementType": "labels.text.stroke",
         "stylers": {
             "color": "#7e8a4aff",
-            "visibility": "off",
+            "visibility": "on",
             "weight": 3
         }
     },
@@ -771,7 +771,7 @@
         "elementType": "labels.text.stroke",
         "stylers": {
             "color": "#7e8a4aff",
-            "visibility": "off",
+            "visibility": "on",
             "weight": 3
         }
     },
@@ -780,7 +780,7 @@
         "elementType": "labels.text.stroke",
         "stylers": {
             "color": "#7e8a4aff",
-            "visibility": "off",
+            "visibility": "on",
             "weight": 3
         }
     },
@@ -789,7 +789,7 @@
         "elementType": "labels.text.stroke",
         "stylers": {
             "color": "#7e8a4aff",
-            "visibility": "off",
+            "visibility": "on",
             "weight": 3
         }
     },
@@ -798,7 +798,7 @@
         "elementType": "labels.text.stroke",
         "stylers": {
             "color": "#7e8a4aff",
-            "visibility": "off",
+            "visibility": "on",
             "weight": 3
         }
     },
@@ -1282,14 +1282,14 @@
         "featureType": "building",
         "elementType": "geometry.topfill",
         "stylers": {
-            "color": "#11a4d9ff"
+            "color": "#083f7aff"
         }
     },
     {
         "featureType": "building",
         "elementType": "geometry.sidefill",
         "stylers": {
-            "color": "#083f7aff"
+            "color": "#11a4d9ff"
         }
     },
     {

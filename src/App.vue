@@ -21,7 +21,6 @@
             <span>排查计划</span>
             <b />
           </div>
-          {{ count }}{{ count % 2 === 0 }}
           <TroubleshootingPlan v-show="count % 2 === 0" />
         </div>
       </div>
@@ -164,9 +163,10 @@ export default {
       .content_center_warp {
         position: absolute;
         min-height: 138px;
-        bottom: 60px;
+        bottom: 40px;
         left: 0;
         right: 0;
+        z-index: 9;
         .content_center_trigger {
           position: absolute;
           right: 30px;
