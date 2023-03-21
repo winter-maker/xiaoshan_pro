@@ -172,9 +172,10 @@ export default {
         ],
       };
       dom.setOption(option);
-      window.onresize = () => {
+      window.addEventListener('resize', () => {
+        console.log(window, 'troubleshooting---')
         dom.resize();
-      };
+      });
     },
   },
 };

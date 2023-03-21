@@ -4,10 +4,27 @@
 <script>
 let map = null;
 export default {
+  props: {
+    list: {
+      type: Array,
+      default: []
+    }
+  },
+  watch: {
+    list: {
+      handler(val) {
+        if(val) {
+          console.log('---watch------', val)
+          this.createPolygon();
+        }
+      },
+      immediate: true,
+      deep: true
+    }
+  },
   mounted() {
     map = new BMapGL.Map("mapDiv"); // 创建地图实例
     this.createMap();
-    this.testProxy();
   },
   methods: {
     createMap() {
@@ -15,20 +32,26 @@ export default {
       map.centerAndZoom(point, 18);
       map.enableScrollWheelZoom(true);
       let res = require("@/assets/json/deep_color2.json");
-      console.log(res);
+      //console.log(res);
       map.setMapStyleV2({ styleJson: res });
       //map.setHeading(64.5);
       //map.setTilt(73);
 
-      this.createPolygon();
+      //this.createPolygon();
     },
     createPolygon() {
       let bd = new BMapGL.Boundary();
-      let enters = require("@/assets/json/tech_city.json");
+      //let enters = require("@/assets/json/tech_city.json");
+      let enters = [];
+      for(let key of this.list) {
+        
+      }
+      console.log(enters, this.list)
+
       let colors = ["#23d5fc", "#33daa8", "#b48f61", "#9582ee"];
       for (let key in enters) {
         let str = "";
-        console.log(key, enters);
+        //console.log(key, enters);
         enters[key].forEach((item) => {
           str += item + ";";
         });
@@ -44,9 +67,7 @@ export default {
         } else {
           color = colors[3];
         }
-        console.log(slice_length);
         str = str.substring(0, str.length - 1);
-        //console.log("---str----", str);
         let ply = new BMapGL.Polygon([str], {
           strokeWeight: 2,
           strokeColor: colors[key % 4],
@@ -67,7 +88,7 @@ export default {
         //   map.addOverlay(ply); //添加覆盖物
         // }
 
-        console.log("---杭州萧山金逸包装有限公司rs---", rs, count);
+        //console.log("---杭州萧山金逸包装有限公司rs---", rs, count);
         // let hole = new BMapGL.Polygon(rs.boundaries, {
         //   strokeWeight: 2,
         //   strokeColor: "#00e4ff",
@@ -76,12 +97,7 @@ export default {
         // });
         // map.addOverlay(hole);
       });
-    },
-    testProxy() {
-      this.getRequest("/list").then((res) => {
-        //console.log(res);
-      });
-    },
+    }
   },
 };
 </script>
@@ -89,7 +105,7 @@ export default {
 #mapDiv {
   width: 100%;
   height: 100%;
-  filter: brightness(1.5) saturate(1.5);
+  //filter: brightness(1.5) saturate(1.5);
   ::v-deep .anchorBL {
     display: none;
   }

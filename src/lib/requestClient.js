@@ -18,12 +18,13 @@ const getRequest = (url, data) => {
 const request = (options) => {
   options.headers = options.headers || {};
   options.baseURL = BASE_URL;
-  options.headers["Authorization"] = localStorage.getItem("token") || "";
+  options.headers["x-acs-dingtalk-access-token"] = sessionStorage.getItem("token") || "";
   options.timeout = options.timeout || 5000;
   let isOk = true;
 
   return axios(options)
     .then((response) => {
+      console.log('---response---',response)
       let status = response.status,
         data = response.data,
         message = response.message;
@@ -32,13 +33,8 @@ const request = (options) => {
       }
       if (status == 200) {
         if (response.headers.authorization) {
-          localStorage.setItem("token", response.headers.authorization);
+          sessionStorage.setItem("token", response.headers.authorization);
         }
-      } else if (status == 201 || status == 202) {
-        console.log(message);
-        //router.push("/login");
-      } else {
-        console.log(message);
       }
       return { status, data };
     })
@@ -47,7 +43,7 @@ const request = (options) => {
     })
     .catch((error) => {
       if (error.response && error.response.status == 401 && router) {
-        localStorage.setItem("token", "");
+        sessionStorage.setItem("token", "");
         //router.push({ path: "/login" });
       }
       return Promise.reject(_.isString(error) ? new Error(error) : error);
@@ -57,9 +53,9 @@ const request = (options) => {
 const postRequest = (url, options = {}) => {
   return request({
     url: url,
-    data: qs.stringify(options.body),
-    headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    method: options.method || "POST",
+    data: options.body,
+    headers: Object.assign({}, { "Content-Type": "application/json" }, options.headers),
+    method: "POST",
   });
 };
 

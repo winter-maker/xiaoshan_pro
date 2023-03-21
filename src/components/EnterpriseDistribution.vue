@@ -23,7 +23,7 @@
           :key="index"
           :class="index === activeIndex ? 'active2' : ''"
         >
-          <span :style="{ background: colors2[index % 9] }" />
+          <span :style="{ background: colors[index % 9] }" />
           <span>{{ item.name }}</span>
           <span>{{ item.value }}</span>
           <span>{{ item.prop }}</span>
@@ -42,17 +42,6 @@ export default {
       ],
       activeId: 1,
       colors: [
-        "#73b866",
-        "#2978b0",
-        "#535abb",
-        "#204f9c",
-        "#ae9f64",
-        "#50bbb0",
-        "#5f469e",
-        "#50bbb0",
-        "#59abf6",
-      ],
-      colors2: [
         "rgb(132,194,244)",
         "rgb(39,188,191)",
         "rgb(17,94,170)",
@@ -87,7 +76,7 @@ export default {
     getChart() {
       const qyChart = this.$charts.init(document.getElementById("qy_chart"));
       qyChart.setOption({
-        color: this.colors2,
+        color: this.colors,
         title: {
           show: false,
           top: "center",
@@ -155,9 +144,10 @@ export default {
           },
         ],
       });
-      window.onresize = () => {
+      window.addEventListener('resize', () => {
+        console.log(window, '企业分布情况---')
         qyChart.resize();
-      };
+      });
     },
   },
 };
