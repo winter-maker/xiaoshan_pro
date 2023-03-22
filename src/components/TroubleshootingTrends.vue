@@ -172,8 +172,8 @@ export default {
         ],
       };
       dom.setOption(option);
-      window.addEventListener('resize', () => {
-        console.log(window, 'troubleshooting---')
+      window.addEventListener("resize", () => {
+        console.log(window, "troubleshooting---");
         dom.resize();
       });
     },
@@ -182,6 +182,8 @@ export default {
 </script>
 <style lang="scss" scoped>
 .trouble_trend {
+  height: 419px;
+  padding-top: 20px;
   font-size: 14px;
 
   .two_wrap,
@@ -205,13 +207,13 @@ export default {
     }
   }
   //pad端
-  @media only screen and (min-width: 768px) and (max-width: 1199px) {
-    .content2 {
-      transform: scale(0.8);
-      transform-origin: 0 0;
-      //overflow: hidden;
-    }
-  }
+  // @media only screen and (min-width: 768px) and (max-width: 1199px) {
+  //   .content2 {
+  //     transform: scale(0.8);
+  //     transform-origin: 0 0;
+  //     //overflow: hidden;
+  //   }
+  // }
   h4 {
     width: 253px;
     height: 18px;
@@ -238,7 +240,7 @@ export default {
   }
   .chart {
     width: 100%;
-    height: 15vh;
+    height: 240px;
   }
 }
 </style>

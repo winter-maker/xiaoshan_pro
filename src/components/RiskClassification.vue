@@ -83,8 +83,8 @@ export default {
         ],
       };
       dom.setOption(option);
-      window.addEventListener('resize', () => {
-        console.log(window, 'riskclass---')
+      window.addEventListener("resize", () => {
+        console.log(window, "riskclass---");
         dom.resize();
       });
     },
@@ -94,6 +94,6 @@ export default {
 <style lang="scss" scoped>
 #risk_main {
   width: 100%;
-  height: 100%;
+  height: 261px;
 }
 </style>

@@ -17,7 +17,7 @@ export default {
 <style lang="scss" scoped>
 .border-wrap {
   width: 460px;
-  height: 347px;
+  //height: 347px;
   //background-color: rgba(0, 80, 157, 0.25);
   background: url("@/assets/images/common/block_bg.png") no-repeat;
   background-size: cover;

@@ -42,6 +42,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .street_dis {
+  height: 319px;
   font-size: 15px;
   .top {
     display: flex;

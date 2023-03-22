@@ -130,7 +130,7 @@ export default {
         },
       ],
       count: 0,
-      mapData: []
+      mapData: [],
     };
   },
   mounted() {
@@ -141,36 +141,41 @@ export default {
     getToken() {
       let options = {
         body: {
-          "appKey" : "dingel2ycr40ued04qgf",
-          "appSecret" : "AJgz3PWzn8s-O6d6zM3gko6rgUmoN6VMszHshBOHPJwU8mNkTqDqFLgNjtlVCibh"
+          appKey: "dingel2ycr40ued04qgf",
+          appSecret:
+            "AJgz3PWzn8s-O6d6zM3gko6rgUmoN6VMszHshBOHPJwU8mNkTqDqFLgNjtlVCibh",
+        },
+      };
+      this.postRequest("/oauth2/accessToken", options).then((res) => {
+        if (res.status === 200) {
+          const { accessToken } = res.data;
+          sessionStorage.setItem("token", accessToken);
         }
-      }
-      this.postRequest('/oauth2/accessToken', options).then((res)=>{
-        if(res.status === 200) {
-          const {accessToken} = res.data;
-          sessionStorage.setItem('token', accessToken);
-        }
-      })
+      });
     },
     getData() {
       let options = {
         body: {
-          "userId" : "150708356321546148",
-          "appType" : "APP_J3324MXEQQQZ8PBARVVT",
-          "systemToken" : "BB866481CMF79RF5AIAT5BNN075N2W5IJGLDLJO",   
-          "formUuid" : "FORM-DX966R61PHC7RXFBC58X3CNUZKA62SWQBGQDL51",
-          "currentPage": 1,
-          "pageSize": 10
-        }
-      }
-      this.postRequest('/yida/forms/instances/search', options).then((res)=>{
-        console.log('---getdata---', res)
-        if(res.status === 200) {
+          userId: "150708356321546148",
+          appType: "APP_J3324MXEQQQZ8PBARVVT",
+          systemToken: "BB866481CMF79RF5AIAT5BNN075N2W5IJGLDLJO",
+          formUuid: "FORM-DX966R61PHC7RXFBC58X3CNUZKA62SWQBGQDL51",
+          searchFieldJson: JSON.stringify({
+            //textField_ldqgcide: "待排查",
+            textField_ldqeyle9: "红垦区",
+          }),
+          currentPage: 1,
+          pageSize: 100,
+        },
+      };
+      this.postRequest("/yida/forms/instances/search", options).then((res) => {
+        console.log("---getdata---", res);
+        if (res.status === 200) {
           this.mapData = res.data.data;
         }
-      })
-    }
-  }
+      });
+    },
+  },
 };
 </script>
 

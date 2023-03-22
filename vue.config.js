@@ -10,10 +10,10 @@ module.exports = defineConfig({
         //ws: true,
         changOrigin: true,
       },
-      '/v1.0':{
-        target:'https://api.dingtalk.com',
+      "/v1.0": {
+        target: "https://api.dingtalk.com",
         changOrigin: true,
-      }
+      },
     },
   },
   // 如果你不需要使用eslint，把lintOnSave设为false即可

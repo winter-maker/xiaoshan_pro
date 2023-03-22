@@ -144,8 +144,8 @@ export default {
           },
         ],
       });
-      window.addEventListener('resize', () => {
-        console.log(window, '企业分布情况---')
+      window.addEventListener("resize", () => {
+        console.log(window, "企业分布情况---");
         qyChart.resize();
       });
     },
@@ -208,7 +208,7 @@ export default {
   }
 }
 .enterprise_dis {
-  height: 100%;
+  height: 326px;
   padding-top: 20px;
   .chart {
     width: 142px;
@@ -228,6 +228,7 @@ export default {
     }
   }
   ul {
+    margin-right: 20px;
     .active2 {
       background-color: rgba(77, 136, 245, 0.7);
     }
