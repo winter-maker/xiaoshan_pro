@@ -46,7 +46,7 @@
       </BorderWrap>
     </div>
 
-    <ContentFooter />
+    <ContentFooter @foot-child="footEvent" />
   </div>
 </template>
 
@@ -131,13 +131,28 @@ export default {
       ],
       count: 0,
       mapData: [],
+      totalCount: 0,
+      currentPage: 1,
+      enterInfoList: [],
+      textField_ldqeyle9: "",
     };
   },
   mounted() {
     this.getToken();
-    this.getData();
+    this.getEnterInfo();
   },
   methods: {
+    footEvent(e) {
+      console.log("---footEvent---", e);
+      if (e == "总览") {
+        this.textField_ldqeyle9 = "红垦区";
+      } else {
+        this.textField_ldqeyle9 = e;
+      }
+      this.mapData = [];
+      this.currentPage = 1;
+      this.getMapData();
+    },
     getToken() {
       let options = {
         body: {
@@ -153,7 +168,33 @@ export default {
         }
       });
     },
-    getData() {
+    getEnterInfo() {
+      let currentPage = 1;
+      let options = {
+        body: {
+          userId: "150708356321546148",
+          appType: "APP_J3324MXEQQQZ8PBARVVT",
+          systemToken: "BB866481CMF79RF5AIAT5BNN075N2W5IJGLDLJO",
+          formUuid: "FORM-JH9660C1OCC7YKH69X85Y59G19LU217IJGLDLU5",
+          // searchFieldJson: JSON.stringify({
+          //   selectField_ldlgorhx: "红垦区",
+          // }),
+          currentPage,
+          pageSize: 100,
+        },
+      };
+      this.postRequest("/yida/forms/instances/search", options).then((res) => {
+        console.log("---企业信息表---", res);
+        if (res.status === 200) {
+          this.enterInfoList = [...this.enterInfoList, ...res.data.data];
+          if (res.data.totalCount > this.enterInfoList.length) {
+            currentPage += 1;
+            this.getEnterInfo();
+          }
+        }
+      });
+    },
+    getMapData() {
       let options = {
         body: {
           userId: "150708356321546148",
@@ -161,17 +202,21 @@ export default {
           systemToken: "BB866481CMF79RF5AIAT5BNN075N2W5IJGLDLJO",
           formUuid: "FORM-DX966R61PHC7RXFBC58X3CNUZKA62SWQBGQDL51",
           searchFieldJson: JSON.stringify({
-            //textField_ldqgcide: "待排查",
-            textField_ldqeyle9: "红垦区",
+            textField_ldqeyle9: this.textField_ldqeyle9,
           }),
-          currentPage: 1,
+          currentPage: this.currentPage,
           pageSize: 100,
         },
       };
       this.postRequest("/yida/forms/instances/search", options).then((res) => {
-        console.log("---getdata---", res);
         if (res.status === 200) {
-          this.mapData = res.data.data;
+          this.mapData = [...this.mapData, ...res.data.data];
+          // console.log(this.mapData);
+          this.totalCount = res.data.totalCount;
+          if (this.totalCount > this.mapData.length) {
+            this.currentPage += 1;
+            this.getMapData();
+          }
         }
       });
     },

@@ -27,9 +27,15 @@ export default {
       activeId: 1,
     };
   },
+  mounted() {
+    let ev = this.list[0];
+    this.activeId = ev.id;
+    this.$emit("foot-child", ev.name);
+  },
   methods: {
     selectItem(item) {
       this.activeId = item.id;
+      this.$emit("foot-child", item.name);
     },
   },
 };

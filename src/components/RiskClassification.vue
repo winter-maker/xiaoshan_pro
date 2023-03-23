@@ -84,7 +84,6 @@ export default {
       };
       dom.setOption(option);
       window.addEventListener("resize", () => {
-        console.log(window, "riskclass---");
         dom.resize();
       });
     },

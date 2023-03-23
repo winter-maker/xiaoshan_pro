@@ -145,7 +145,6 @@ export default {
         ],
       });
       window.addEventListener("resize", () => {
-        console.log(window, "企业分布情况---");
         qyChart.resize();
       });
     },
