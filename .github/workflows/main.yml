@@ -1,0 +1,36 @@
+name: deploy
+
+on:
+  push:
+    branches: [master] # master 分支有 push 时触发
+    paths-ignore: # 下面文件的变更不触发部署，可以自行添加
+      - README.md  
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest  # 使用最新的 Ubuntu 环境
+
+    steps:
+      # 1. 检出代码
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      # 2. 设置 Node.js 环境
+      - name: Build
+        uses: actions/setup-node@master
+        with:
+          node-version: '16.x'
+      - run: npm install
+      - run: npm run build
+
+      # 5. 部署到服务器（示例：通过 SSH 部署）
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          # 部署到 gh-pages 分支
+          branch: gh-pages
+          publish_dir: ./dist
+          github_token: ${{ secrets.XIAOSHAN }}
+          user_name: ${{ secrets.MY_USER_NAME }}  # SSH 用户名
+          user_email: ${{ secrets.MY_USER_EMAIL }}    # SSH 私钥
+          commit_message: 自动部署
